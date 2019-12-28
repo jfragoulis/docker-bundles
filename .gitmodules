@@ -1,0 +1,3 @@
+[submodule "rails/app-template-rails"]
+	path = rails/app-template-rails
+	url = git@github.com:jfragoulis/app-template-rails.git
