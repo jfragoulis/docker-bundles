@@ -1,0 +1,16 @@
+version: '2'
+services:
+  db:
+    image: mariadb
+    volumes:
+      - ./blog/tmp/db:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+  web:
+    build: ./blog
+    volumes:
+      - ./blog:/app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
