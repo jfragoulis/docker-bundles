@@ -3,14 +3,14 @@ services:
   db:
     image: mariadb
     volumes:
-      - ./blog/tmp/db:/var/lib/mysql
+      - ./app/tmp/db:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: root
   web:
-    build: ./blog
+    build: ./app
     volumes:
-      - ./blog:/app
+      - ./app:/app
     ports:
-      - "3000:3000"
+      - '3000:3000'
     depends_on:
       - db
