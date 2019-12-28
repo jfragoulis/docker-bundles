@@ -6,6 +6,11 @@ services:
       - ./app/tmp/db:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: root
+  redis:
+    image: 'redis:buster'
+    command: redis-server
+    volumes:
+      - './app/tmp/redis:/data'
   web:
     build:
       context: ./app
